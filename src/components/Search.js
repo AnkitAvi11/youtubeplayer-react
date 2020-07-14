@@ -14,7 +14,7 @@ class Search extends React.Component {
 
     formSubmit = (e) => {
         e.preventDefault();
-        
+        this.props.onformsubmit(this.state.term);
         this.setState({
             term : ""
         })
