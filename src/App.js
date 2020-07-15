@@ -50,6 +50,12 @@ class App extends Component {
         .catch(err => console.log(err))
     }
 
+    onvideoSelect = (video) => {
+        this.setState({
+            selectedVideo : video
+        })
+    }
+
     render() {
         return (
             <div>
@@ -59,10 +65,10 @@ class App extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-8">
-                            <Player video={this.state.selectedVideo}/>
+                            <Player video={this.state.selectedVideo} />
                         </div>
                         <div className="col-sm-4">
-                            <VideoList videos={this.state.videos} />
+                            <VideoList videos={this.state.videos} onvideoSelect={this.onvideoSelect} />
                         </div>
                     </div>
                 </div>
